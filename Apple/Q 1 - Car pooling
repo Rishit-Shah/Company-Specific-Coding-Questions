@@ -135,11 +135,11 @@ public class BookingTest {
         // Compare with every other booking
         for (int i = 1; i < bookings.length; i++) {
             int passengers = bookings[i][0];
-            int start = bookings[i][1];
-            int end = bookings[i][2];
+            int secondstart = bookings[i][1];
+            int secondend = bookings[i][2];
 
             // Check overlap
-            boolean overlap = (firstStart < end && start < firstEnd);
+            boolean overlap = (firstStart < secondend && secondstart < firstEnd);
             if (overlap) {
                 if (firstPassengers + passengers > capacity) {
                     return false;
